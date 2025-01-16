@@ -1,0 +1,20 @@
+name: Fake release
+
+on:
+  workflow_run:
+    workflows:
+      - Print
+      - Fake packaging
+    types:
+      - completed
+
+jobs:
+  lala:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: python-package-distributions
+
+      - run: python main.py
