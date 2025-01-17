@@ -18,6 +18,7 @@ ruff = "^0.9.1"
 line-length = 88
 target-version = "py310"
 
+[tool.ruff.lint]
 # See list of rules at: https://docs.astral.sh/ruff/rules/
 select = ["E", "F", "W", "C90"]
 

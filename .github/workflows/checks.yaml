@@ -18,7 +18,7 @@ jobs:
         run: pip install poetry && poetry install --with dev
 
       - name: Run linters
-        run: poetry run ruff .
+        run: poetry run ruff check .
 
   tests:
     strategy:
