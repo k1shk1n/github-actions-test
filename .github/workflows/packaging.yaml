@@ -26,20 +26,21 @@ jobs:
           name: python-package-distributions
           path: dist/
 
-  release:
+  publish:
+    if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-22.04
     needs: build
-    if: github.ref == 'refs/heads/main'
+    environment:
+      name: pypi
+      url: https://pypi.org/project/github-actions-test/
     permissions:
       id-token: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.FINE_GRAINED_TOKEN }}
+      - name: Download package
+        uses: actions/download-artifact@v4
         with:
-          branch: main
-          tag_format: v${version}
+          name: python-package-distributions
+          path: dist/
+
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@release/v1
