@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "github-actions-test-k1shk1n"
-version = "0.0.2"
+version = "0.0.3"
 description = ""
 packages = [{include = "github_actions_test_k1shk1n"}]
 
