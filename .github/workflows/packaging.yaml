@@ -32,7 +32,7 @@ jobs:
     needs: build
     environment:
       name: pypi
-      url: https://pypi.org/project/github-actions-test/
+      url: https://pypi.org/project/github-actions-test-k1shk1n/
     permissions:
       id-token: write
     steps:
