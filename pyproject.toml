@@ -1,14 +1,15 @@
 [tool.poetry]
-name = "github-actions-test"
-version = "0.0.1"
+name = "github-actions-test-k1shk1n"
+version = "0.0.2"
 description = ""
-packages = [{include = "github_actions_test"}]
+packages = [{include = "github_actions_test_k1shk1n"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+twine = "^6.0.1"
 
 [tool.poetry.scripts]
-gat = "github_actions_test.main:main"
+gat = "github_actions_test_k1shk1n.main:main"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
